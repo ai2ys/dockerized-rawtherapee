@@ -1,9 +1,10 @@
-FROM ubuntu:18.10
+FROM ubuntu:20.04
 
 MAINTAINER Karel Fiala <fiala.karel@gmail.com>
 
-RUN apt-get update \
-    && apt-get install --yes software-properties-common \
-    && add-apt-repository --yes ppa:dhor/myway \
-    && apt-get update \
-    && apt-get install --yes rawtherapee
+RUN    apt-get update \
+    && apt-get install --yes rawtherapee \
+    && apt-get clean \
+    && rm -rf /var/cache/* \
+    && rm -rf /var/lib/apt/lists/*
+
