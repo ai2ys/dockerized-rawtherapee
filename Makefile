@@ -4,7 +4,7 @@ build:
 	docker build -t $(IMAGE_NAME) .
 
 build-nc:
-	docker build --no-cache --pull -t $(IMAGE_NAME) .
+	docker build --no-cache --pull -t $(IMAGE_NAME) -f Dockerfile.ubuntu .
 
 push:
 	docker push $(IMAGE_NAME)

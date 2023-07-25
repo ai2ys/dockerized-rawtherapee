@@ -4,11 +4,12 @@ services:
   rawtherapee:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.${DIST}
       args:
         VERSION_UBUNTU:
+        VERSION_ALPINE:
     container_name: rawtherapee
-    image: ai2ys/dockerized-rawtherapee:0.0.0
+    image: ai2ys/dockerized-rawtherapee/${DIST}:0.0.0
     hostname: rawtherapee
     working_dir: /workspace
     volumes:

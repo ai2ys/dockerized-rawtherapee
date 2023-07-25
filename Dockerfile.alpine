@@ -1,0 +1,9 @@
+ARG VERSON_ALPINE=3.18
+FROM alpine:${VERSON_ALPINE}
+
+WORKDIR /
+
+RUN apk update && apk add --no-cache \
+    rawtherapee \
+  && rm -rf /var/cache/apk/*
+
