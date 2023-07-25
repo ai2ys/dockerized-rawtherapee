@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+ARG VERSON_UBUNTU=20.04
+FROM ubuntu:${VERSON_UBUNTU}
 
 MAINTAINER Karel Fiala <fiala.karel@gmail.com>
 

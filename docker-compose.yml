@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  rawtherapee:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VERSION_UBUNTU:
+    container_name: rawtherapee
+    image: ai2ys/dockerized-rawtherapee:0.0.0
+    hostname: rawtherapee
+    working_dir: /workspace
+    volumes:
+      - ${DATA_DIR:-./}:/workspace
